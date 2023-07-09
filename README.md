@@ -75,7 +75,7 @@ to a live version for this repository
 
 If a blank page opens, make sure there are no errors in the `Console` tab
 related to incorrect paths to the CSS and JS files of the project (**404**). You
-most likely have the wrong value for the `homepage` property in the
+most likely  have the wrong value for the `homepage` property in the
 `package.json` file.
 
 ### Routing
