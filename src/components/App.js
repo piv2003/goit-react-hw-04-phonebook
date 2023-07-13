@@ -25,21 +25,17 @@ function checkСontact(nameContact) {
     return contacts.some(contact => contact.name === nameContact);
   }
 
+  function onDeleteContact(contactId) {
+    setContacts(prevState =>
+      prevState.filter(contact => contact.id !== contactId)
+    );
+  }
 
 
 
 
 
 
-
-
-
-
-  onDeleteContact = contactId => {
-    this.setState(prevState => ({
-      contacts: prevState.contacts.filter(({ id }) => id !== contactId),
-    }));
-  };
 
   notifiesAlert = nameContact => {
     alert(`"${nameContact}" is already in contacts.`);
