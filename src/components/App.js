@@ -11,7 +11,7 @@ export default function App() {
   const [contacts, setContacts] = useState(
     () => loadStorage(LOCAL_STORAGE_KEY) ?? []
   );
-
+  const [filter, setFilter] = useState('');
 
   componentDidMount = () => {
     const contacts = loadStorage(LOCAL_STORAGE_KEY);
