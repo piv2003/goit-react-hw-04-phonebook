@@ -12,7 +12,13 @@ export default function App() {
     () => loadStorage(LOCAL_STORAGE_KEY) ?? []
   );
   const [filter, setFilter] = useState('');
+  
+  useEffect(() => {
+    saveStorage(LOCAL_STORAGE_KEY);
+  }, [contacts]);
 
+
+  
   componentDidMount = () => {
     const contacts = loadStorage(LOCAL_STORAGE_KEY);
     if (contacts) {
