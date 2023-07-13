@@ -1,18 +1,11 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormBox, InputName, InputTel, Button } from './Form.styled';
-class Form extends Component {
-  state = {
-    name: '',
-    number: '',
-  };
 
-  handleChange = e => {
-    const { name, value } = e.currentTarget;
-    this.setState({
-      [name]: value,
-    });
-  };
+export default function Form({ onSubmit }) {
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
+
 
   handleSubmit = e => {
     e.preventDefault();
