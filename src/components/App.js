@@ -8,7 +8,9 @@ import { loadStorage, saveStorage } from '../LocalStorage/LocalStorage.js';
 
 export default function App() {
   const LOCAL_STORAGE_KEY = 'contacts';
-
+  const [contacts, setContacts] = useState(
+    () => loadStorage(LOCAL_STORAGE_KEY) ?? []
+  );
 
 
   componentDidMount = () => {
