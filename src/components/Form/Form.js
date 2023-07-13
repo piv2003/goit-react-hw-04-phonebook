@@ -12,23 +12,22 @@ export default function Form({ onSubmit }) {
        case 'name':
          setName(value);
          break;
-
        case 'number':
          setNumber(value);
          break;
-
        default:
-         console.warn(`Field type name - ${name} not processed`);
+         console.warn(`Name - ${name} => not processed`);
      }
    }
 
+ function handleSubmit(evt) {
+     evt.preventDefault();
+    onSubmit(name, number);
+     setName('');
+     setNumber('');
+   }
 
 
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.onSubmit(this.state);
-    this.setState({ name: '', number: '' });
-  };
 
   render() {
     const { name, number } = this.state;
