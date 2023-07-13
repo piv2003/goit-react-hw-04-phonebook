@@ -6,13 +6,10 @@ import ContactsList from 'components/ContactsList/ContactsList.js';
 import { AppBox, Empty } from 'components/App.styled';
 import { loadStorage, saveStorage } from '../LocalStorage/LocalStorage.js';
 
-const LOCAL_STORAGE_KEY = 'contacts';
+export default function App() {
+  const LOCAL_STORAGE_KEY = 'contacts';
 
-export class App extends Component {
-  state = {
-    contacts: [],
-    filter: '',
-  };
+
 
   componentDidMount = () => {
     const contacts = loadStorage(LOCAL_STORAGE_KEY);
