@@ -20,15 +20,20 @@ export default function App() {
   function addContact(name, number) {
     setContacts(prevState => [...prevState, { id: nanoid(4), name, number }]);
   }
-
-
   
+function checkСontact(nameContact) {
+    return contacts.some(contact => contact.name === nameContact);
+  }
 
-  checkСontact = nameContact => {
-    return this.state.contacts.some(
-      ({ name: curentName }) => curentName === nameContact
-    );
-  };
+
+
+
+
+
+
+
+
+
 
   onDeleteContact = contactId => {
     this.setState(prevState => ({
