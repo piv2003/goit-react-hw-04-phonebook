@@ -39,7 +39,7 @@ export default function Form({ onSubmit }) {
           title="Name may contain only letters, apostrophe, dash and spaces. 
         For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
-          onChange={this.handleChange}
+          onChange={handleChange}
         />
       </label>
       <label>
