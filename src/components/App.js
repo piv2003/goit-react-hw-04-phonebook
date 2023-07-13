@@ -35,25 +35,13 @@ function notifiesAlert(nameContact) {
     return toast.error(`${nameContact} is already in contacts.`);
   }
 
+function handleSubmit(name, number) {
+    checkСontact(name) ? notifiesAlert(name) : addContact(name, number);
+  }
 
 
 
-  
-  handleSubmit = ({ name: newName, number }) => {
-    this.checkСontact(newName)
-      ? this.notifiesAlert(newName)
-      : this.addContact(newName, number);
-  };
 
-  handleChange = e => {
-    const { name, value } = e.currentTarget;
-    this.setState({
-      [name]: value,
-    });
-  };
-
-  render() {
-    const { contacts, filter } = this.state;
     return (
       <AppBox>
         <h1>PhoneBook</h1>
