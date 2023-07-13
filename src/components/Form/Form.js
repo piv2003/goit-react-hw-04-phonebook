@@ -6,6 +6,23 @@ export default function Form({ onSubmit }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
+ function handleChange(evt) {
+   const { name, value } = evt.currentTarget;   
+     switch (name) {
+       case 'name':
+         setName(value);
+         break;
+
+       case 'number':
+         setNumber(value);
+         break;
+
+       default:
+         console.warn(`Field type name - ${name} not processed`);
+     }
+   }
+
+
 
   handleSubmit = e => {
     e.preventDefault();
