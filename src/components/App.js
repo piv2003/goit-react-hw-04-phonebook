@@ -17,30 +17,12 @@ export default function App() {
     saveStorage(LOCAL_STORAGE_KEY);
   }, [contacts]);
 
-
-  
-  componentDidMount = () => {
-    const contacts = loadStorage(LOCAL_STORAGE_KEY);
-    if (contacts) {
-      this.setState({ contacts });
-      return;
-    }
-    this.setState({ contacts: [] });
-  };
-
-  componentDidUpdate(_, prevState) {
-    const nextContacts = this.state.contacts;
-    const prevContacts = prevState.contacts;
-    if (nextContacts !== prevContacts) {
-      saveStorage(LOCAL_STORAGE_KEY, nextContacts);
-    }
+  function addContact(name, number) {
+    setContacts(prevState => [...prevState, { id: nanoid(4), name, number }]);
   }
 
-  addContact = (name, number) => {
-    this.setState(({ contacts }) => ({
-      contacts: [...contacts, { id: nanoid(4), name, number }],
-    }));
-  };
+
+  
 
   checkСontact = nameContact => {
     return this.state.contacts.some(
