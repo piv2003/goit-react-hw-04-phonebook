@@ -31,16 +31,14 @@ function checkСontact(nameContact) {
     );
   }
 
+function notifiesAlert(nameContact) {
+    return toast.error(`${nameContact} is already in contacts.`);
+  }
 
 
 
 
-
-
-  notifiesAlert = nameContact => {
-    alert(`"${nameContact}" is already in contacts.`);
-  };
-
+  
   handleSubmit = ({ name: newName, number }) => {
     this.checkСontact(newName)
       ? this.notifiesAlert(newName)
