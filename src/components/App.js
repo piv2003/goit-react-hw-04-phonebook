@@ -56,7 +56,7 @@ export default function App() {
           />
         </>
       ) : (
-        <p>Contacts list is empty</p>
+        <Empty>Contacts list is empty</Empty>
       )}
     </AppBox>
   );
