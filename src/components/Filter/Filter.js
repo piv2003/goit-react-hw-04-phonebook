@@ -12,7 +12,7 @@ const Filter = ({ setFilter, filter }) => {
         type="text"
         name="filter"
         value={filter}
-        onChange={onChange}
+        onChange={filteredContact}
       />
     </LabelFilter>
   );
