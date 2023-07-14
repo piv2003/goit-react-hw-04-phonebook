@@ -15,7 +15,7 @@ export default function App() {
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    saveStorage(LOCAL_STORAGE_KEY);
+    saveStorage(LOCAL_STORAGE_KEY, contacts);
   }, [contacts]);
 
   function addContact(name, number) {
