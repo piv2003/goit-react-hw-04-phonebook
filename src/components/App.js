@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
-import { toast, ToastContainer } from 'react-toastify';
 import Form from 'components/Form';
 import Filter from 'components/Filter';
 import ContactsList from 'components/ContactsList/ContactsList.js';
@@ -33,7 +32,7 @@ export default function App() {
   }
 
   function notifiesAlert(nameContact) {
-    return toast.error(`${nameContact} is already in contacts.`);
+    return alert(`${nameContact} is already in contacts.`);
   }
 
   function handleSubmit(name, number) {
@@ -42,7 +41,6 @@ export default function App() {
 
   return (
     <AppBox>
-      <ToastContainer autoClose={2000} position="top-center" />
       <h1>PhoneBook</h1>
       <Form onSubmit={handleSubmit} />
       <h2>Contacts</h2>
